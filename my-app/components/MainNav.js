@@ -13,10 +13,11 @@ export default function MainNav() {
     <Navbar className="fixed-top navbar-dark bg-primary" expand="lg">
         <Container>
         <Navbar.Brand>Kevin-Tran</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Nav className='col-sm'>
+                <Link href="/" passHref legacyBehavior><Nav.Link>Home</Nav.Link></Link>
+                <Link href="/search" passHref legacyBehavior><Nav.Link>Advanced Search</Nav.Link></Link>      
+            </Nav>    
             <Nav className="d-flex">
-            <Link href="/" passHref legacyBehavior><Nav.Link>Home</Nav.Link></Link>
-            <Link href="/search" passHref legacyBehavior><Nav.Link>Advanced Search</Nav.Link></Link>
             <Form className="d-flex">
                 <Form.Control
                 type="search"
@@ -24,7 +25,7 @@ export default function MainNav() {
                 className="me-2"
                 aria-label="Search"
                 />
-                <Button variant="outline-success">Search</Button>
+                <Button className="btn-success">Search</Button>
             </Form>
             </Nav>
         </Container>
