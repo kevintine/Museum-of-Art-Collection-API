@@ -18,14 +18,13 @@ export default function ArtworkCardDetail({ objectID }) {
         <Card.Body>
             <Card.Title>{data.title ? data.title : "N/A"}</Card.Title>
             <Card.Text>
-                Date: {data.objectDate ? data.objectDate : "N/A"}
-            </Card.Text>
-            <Card.Text>
-                Classification: {data.classification ? data.classification : "N/A"}
-            </Card.Text>
-            <Card.Text>
                 Medium: {data.medium ? data.medium : "N/A"}
             </Card.Text>
+            <br></br>
+            <br></br>
+            {data.artistDisplayName ? <Card.Text>Artist: {data.artistDisplayName}</Card.Text> : "N/A"}
+            {data.creditLine ? <Card.Text>Credit Line: {data.creditLine}</Card.Text> : "N/A"}
+            {data.dimensions ? <Card.Text>Dimensions: {data.dimensions}</Card.Text> : "N/A"}
             <Link href={`/artwork/${objectID}`}>
                 <Button variant="primary">ID: {objectID}</Button>
             </Link>
