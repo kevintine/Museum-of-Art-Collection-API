@@ -13,21 +13,24 @@ export default function ArtworkCardDetail({ objectID }) {
   if (!data) return null;
   return (
     <>
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '80rem' }}>
         {data.primaryImage ? <Card.Img variant="top" src={data.primaryImage} /> : null}
         <Card.Body>
             <Card.Title>{data.title ? data.title : "N/A"}</Card.Title>
             <Card.Text>
-                Medium: {data.medium ? data.medium : "N/A"}
+                <strong>Date:</strong> {data.objectDate ? data.objectDate : "N/A"}
+                <br></br>
+                <strong>Classification:</strong> {data.classification ? data.classification : "N/A"}
+                <br></br>
+                <strong>Medium:</strong> {data.medium ? data.medium : "N/A"}
             </Card.Text>
-            <br></br>
-            <br></br>
-            {data.artistDisplayName ? <Card.Text>Artist: {data.artistDisplayName}</Card.Text> : "N/A"}
-            {data.creditLine ? <Card.Text>Credit Line: {data.creditLine}</Card.Text> : "N/A"}
-            {data.dimensions ? <Card.Text>Dimensions: {data.dimensions}</Card.Text> : "N/A"}
-            <Link href={`/artwork/${objectID}`}>
-                <Button variant="primary">ID: {objectID}</Button>
-            </Link>
+            <Card.Text>
+                <strong>Artist:</strong> {data.objectDisplayName ? data.objectDisplayName : "N/A"}
+                <br></br>
+                <strong>Credit Line:</strong> {data.creditLine ? data.creditLine : "N/A"}
+                <br></br>
+                <strong>Dimensions:</strong> {data.dimensions ? data.dimensions : "N/A"}
+            </Card.Text>
         </Card.Body>
         </Card>
     </>

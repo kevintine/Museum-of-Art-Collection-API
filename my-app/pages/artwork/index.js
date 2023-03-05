@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 import { Row, Col, Pagination, Card } from 'react-bootstrap'
 import useSWR from 'swr'
-import ArtworkCardDetail from '../../components/ArtworkCardDetail'
+import ArtworkCard from '../../components/ArtworkCard';
 
 const PER_PAGE = 12;
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -54,13 +54,17 @@ export default function index() {
         {artworkList ? <Row className="gy-4">
             {artworkList.length > 0 ? artworkList[page - 1].map((objectID) => (
                 <Col key={objectID} md={3}>
-                    <ArtworkCardDetail objectID={objectID} />
+                    <ArtworkCard objectID={objectID} />
                 </Col>
             )) : <h4>Nothing Here</h4>}
             </Row>:
             null
         }
-
+        <Pagination>
+            <Pagination.Prev onClick={previousPage}/>
+            <Pagination.Item>{page}</Pagination.Item>
+            <Pagination.Next onClick={nextPage}/>
+        </Pagination>
     </>
   )
 }
