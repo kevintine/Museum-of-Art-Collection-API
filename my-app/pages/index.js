@@ -1,3 +1,14 @@
+/*********************************************************************************
+*  WEB422 – Assignment 4
+*  I declare that this assignment is my own work in accordance with Seneca Academic Policy.  
+*  No part of this assignment has been copied manually or electronically from any other source
+*  (including web sites) or distributed to other students.
+* 
+*  Name: Kevin Tran Student ID: 026411140 Date: 2023-03-05
+*
+*
+********************************************************************************/ 
+
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
